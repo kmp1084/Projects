@@ -1,14 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
 	<title>Current Leads</title>
 	<script>
 	function checkAuthorization(action) {
@@ -41,7 +38,10 @@
 <body>
 
 <div class="container">
-
+    <div class="jumbotron bg-success">
+	  <h2 class="text-light text-center">My CRM - The Simplest Customer Relationship Manager</h2>
+	</div>
+	<p style="float:right">Authority Level: <b style="text-transform: uppercase;"><span sec:authentication="principal.username"></span></b></p>
 	<h3>Current Leads</h3>
 	<hr>
 	<div class="mb-3">
