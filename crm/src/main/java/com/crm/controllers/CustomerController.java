@@ -46,13 +46,13 @@ public class CustomerController {
 	public String showAddLeadForm(Model model) {
 		Customer lead = new Customer();
 		model.addAttribute("lead", lead);
-		return "/leads/addLead_form";
+		return "leads/addLead_form";
 	}
 	
 	@PostMapping("/lead/save")
 	public String saveLead(@Valid @ModelAttribute("lead") Customer lead, BindingResult theBindingResult) {
 		if (theBindingResult.hasErrors()) {
-			return "/leads/addLead_form";
+			return "leads/addLead_form";
 		}
 		cs.addCustomer(lead);
 		return "redirect:/";
@@ -62,7 +62,7 @@ public class CustomerController {
 	public String updateLead(@RequestParam("id") int id, Model model) {
 		Customer lead = cs.findById(id);
 		model.addAttribute("lead", lead);
-		return "/leads/addLead_form";
+		return "leads/addLead_form";
 	}
 	
 	@GetMapping("/lead/delete")
