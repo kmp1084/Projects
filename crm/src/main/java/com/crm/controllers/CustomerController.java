@@ -54,7 +54,7 @@ public class CustomerController {
 		if (theBindingResult.hasErrors()) {
 			return "leads/addLead_form";
 		}
-		cs.addCustomer(lead);
+		lead = cs.addCustomer(lead);
 		return "redirect:/";
 	}
 	

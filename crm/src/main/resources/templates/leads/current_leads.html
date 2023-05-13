@@ -18,15 +18,14 @@
 				}
 			  }
 			  if (action === 'update') {
-				console.log("came into update");
 				return true;
 			  }
 			} else {
 			  if (action === 'delete') {
-				alert("You need ADMIN level access to delete");
+				alert("Login as ADMIN to delete");
 			  }
 			  if (action === 'update') {
-				alert("You need MANAGER/ADMIN level access to update");
+				alert("Login as MANAGER/ADMIN to update");
 			  }
 			  return false;
 			}

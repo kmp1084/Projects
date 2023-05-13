@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 import com.crm.dao.CustomerRepository;
 import com.crm.entities.Customer;
 
+import jakarta.transaction.Transactional;
+
 @Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
 	
 	private CustomerRepository cr;
